@@ -56,8 +56,52 @@
 // const는 앱스토어에 올리기전에 알고있는 값이어야 한다 사용하는 대표적인 경우는
 // max_allowed_price와 같은 상수에 쓰인다.
 
-String fetchAPI(int data) => data.toString();
-void main(){
-  final name = fetchAPI(123);
-  print(name);
+// String fetchAPI(int data) => data.toString();
+// void main(){
+//   final name = fetchAPI(123);
+//   print(name);
+// }
+
+// 6. Basic Data Types
+// 아래 타입을 포함한 거의 대부분의 타입들이 객체로 이루어져 있다. (함수도 객체)
+// 이것이 Dart가 진정한 객체 지향 언어로 불리는 이유이다.
+// void main () {
+//   String name = "tom";
+//   bool isPlay = true;
+//   int age = 10;
+//   double money = 52.55;
+// }
+
+// 7. Lists
+// dart의 유용한 점은 `collection if`와 `collection for`을 지원하는 것이다.
+
+// collection if를 사용하면 `존재할 수도 안할 수도 있는 요소를 가지고 올 수 있다.`
+// void main() {
+//   var givemefice = true;
+//   var case1 = [
+//     1,
+//     2,
+//     3,
+//     4,
+//     if (givemefice) 5,
+//   ];
+//   List<int> case2 = [
+//     1,
+//     2,
+//     3,
+//     4,
+//     if(givemefice)
+//   ];
+// }
+
+// 8. String Interpolation
+// 변수 사용하는 방법
+
+// $달러 기호를 붙이고 사용할 변수를 적어주면 된다.
+// 만약 무언가를 계산하고 싶다면 ${ } 형태로 적어주면 된다.
+void main() {
+  var name = 'nico';
+  var age = 10;
+  var greeting = 'hello everyone, I\'m $name age is ${age + 10}';
+  print(greeting);
 }
