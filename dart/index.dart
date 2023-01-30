@@ -61,3 +61,38 @@ void main(){
   final name = fetchAPI(123);
   print(name);
 }
+
+// 자료 구조형 collection if 조건문
+// 배열안에 직접적으로 if문을 사용할 수 있다.
+//   var giveMeFive = true;
+//   var numbers = [1, 2, 3, 4, if (giveMeFive) 5];
+
+// // 자료 구조형 collection if version2 조건문
+//   var name6 = 'nico';
+//   var age = 20;
+//   var greeting = "hello everyone, my name is $name6, I\'m ${age + 2} years old";
+
+// 자료 구조형 collection for 반복문
+// var oldFriend = ['nico', 'lynn'];
+// var newFriend = ['ralph', 'tom', for (var friend in oldFriend) "❤️ $friend"];
+
+// print(newFriend);
+
+// Maps
+
+// 일반적으로 맵은 key와 value를 연결하는 객체입니다. 키와 값 모두 모든 유형의 객체가 될 수 있습니다. 각 키는 한 번만 발생하지만 동일한 값을 여러 번 사용할 수 있습니다.
+//   var gifts = {
+// // Key: Value
+//     'first': 'partridge',
+//     'second': 'turtledoves',
+//     'fifth': 'golden rings'
+//   };
+
+// // Map 생성자를 사용하여 동일한 객체를 만들 수 있습니다.
+//   var gifts2 = Map<String, String>();
+//   gifts2['first'] = 'partridge';
+//   gifts2['second'] = 'turtledoves';
+//   gifts2['fifth'] = 'golden rings';
+// https://dart.dev/guides/language/language-tour#maps
+
+
