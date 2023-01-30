@@ -102,3 +102,21 @@ void main(){
 String sayHello(String name) => "Hello ${name} nice to meet you.";
 
 num plus(num a, num b) => a + b;
+
+// Named Parameters
+
+// parameter에 이름을 붙여서 사용할 수 있다. 작동하는 function의 parameter에 {}를 씌워주면
+// 순서에 관계없이 parameter의 name을 활용할수 있다
+// 1. Function에 값을 입력이 안되어있을때 null safety가 작동된다이를 방지하기위해
+// default value를 설정해준다
+
+// String introduce({String name = "coco", int age = 12, String country = 'cuba'}) =>
+//   "im $name age is $age country is $country";
+
+// void main(){
+//   print(introduce(
+//     name: "hoho",
+//     country: "island",
+//     age: 10
+//   ));
+// }
