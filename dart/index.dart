@@ -105,3 +105,67 @@ void main() {
   var greeting = 'hello everyone, I\'m $name age is ${age + 10}';
   print(greeting);
 }
+// String fetchAPI(int data) => data.toString();
+// void main(){
+//   final name = fetchAPI(123);
+//   print(name);
+// }
+
+// 자료 구조형 collection if 조건문
+// 배열안에 직접적으로 if문을 사용할 수 있다.
+//   var giveMeFive = true;
+//   var numbers = [1, 2, 3, 4, if (giveMeFive) 5];
+
+// // 자료 구조형 collection if version2 조건문
+//   var name6 = 'nico';
+//   var age = 20;
+//   var greeting = "hello everyone, my name is $name6, I\'m ${age + 2} years old";
+
+// 자료 구조형 collection for 반복문
+// var oldFriend = ['nico', 'lynn'];
+// var newFriend = ['ralph', 'tom', for (var friend in oldFriend) "❤️ $friend"];
+
+// print(newFriend);
+
+// Maps
+
+// 일반적으로 맵은 key와 value를 연결하는 객체입니다. 키와 값 모두 모든 유형의 객체가 될 수 있습니다. 각 키는 한 번만 발생하지만 동일한 값을 여러 번 사용할 수 있습니다.
+//   var gifts = {
+// // Key: Value
+//     'first': 'partridge',
+//     'second': 'turtledoves',
+//     'fifth': 'golden rings'
+//   };
+
+// // Map 생성자를 사용하여 동일한 객체를 만들 수 있습니다.
+//   var gifts2 = Map<String, String>();
+//   gifts2['first'] = 'partridge';
+//   gifts2['second'] = 'turtledoves';
+//   gifts2['fifth'] = 'golden rings';
+// https://dart.dev/guides/language/language-tour#maps
+
+// Functions
+
+// Dart는 진정한 객체 지향 언어이므로 함수도 객체이며 타입이 Function입니다. 이는 함수를 변수에 할당하거나 다른 함수에 인수로 전달할 수 있음을 의미합니다.
+// 하나의 표현식만 포함하는 함수의 경우 아래와 같이 단축 구문을 사용할 수 있습니다.
+String sayHello(String name) => "Hello ${name} nice to meet you.";
+
+num plus(num a, num b) => a + b;
+
+// Named Parameters
+
+// parameter에 이름을 붙여서 사용할 수 있다. 작동하는 function의 parameter에 {}를 씌워주면
+// 순서에 관계없이 parameter의 name을 활용할수 있다
+// 1. Function에 값을 입력이 안되어있을때 null safety가 작동된다이를 방지하기위해
+// default value를 설정해준다
+
+// String introduce({String name = "coco", int age = 12, String country = 'cuba'}) =>
+//   "im $name age is $age country is $country";
+
+// void main(){
+//   print(introduce(
+//     name: "hoho",
+//     country: "island",
+//     age: 10
+//   ));
+// }
