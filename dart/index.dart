@@ -192,41 +192,104 @@
 // 15. Named constructor
 // 생성자(constructor)함수를 여러개 만들고 싶다면 어떨까?
 
-class Team {
+// class Team {
+//   String name;
+//   int age;
+//   String value;
+//   int xp;
+
+//   Team(
+//       {required this.name,
+//       required this.age,
+//       required this.value,
+//       required this.xp});
+
+// // named parameter
+//   Team.redTeam({
+//     required String name,
+//     required int age,
+//     // :부등호를 써줌으로써 default값을 정해줌
+//   })  : this.age = age,
+//         this.name = name,
+//         this.value = "blue",
+//         this.xp = 0;
+
+// // position parameter
+//   Team.blueTeam(String name, int age)
+//       : this.age = age,
+//         this.name = name,
+//         this.value = 'red',
+//         this.xp = 0;
+// }
+
+// void main() {
+//   var myTeam = Team(name: "1", age: 12, value: "24", xp: 10);
+//   var redTeam = Team.redTeam(name: "hijun", age: 44);
+//   var blueTeam = Team.blueTeam("juno", 42);
+//   print(myTeam);
+//   print(redTeam);
+//   print(blueTeam);
+// }
+
+// class Player {
+//   String name;
+//   String team;
+//   int xp;
+
+//   Player.fromJson(Map<String, dynamic> playerJson)
+//       : name = playerJson['name'],
+//         team = playerJson['team'],
+//         xp = playerJson['xp'];
+
+//   void sayHello() {
+//     print("Hi my name is $name my team $team and experiant $xp");
+//   }
+// }
+
+// void main() {
+//   var apiData = [
+//     {
+//       "name": 'ryu',
+//       "team": 'red',
+//       "xp": 0,
+//     },
+//     {
+//       "name": 'bae',
+//       "team": 'red',
+//       "xp": 0,
+//     },
+//     {
+//       "name": 'jaeha',
+//       "team": 'blue',
+//       "xp": 0,
+//     },
+//   ];
+
+//   apiData.forEach((playerJson) {
+//     var player = Player.fromJson(playerJson);
+//     player.sayHello();
+//   });
+// }
+
+// 16. Cascade Notation
+
+class Player {
   String name;
-  int age;
-  String value;
+  String team;
   int xp;
 
-  Team(
-      {required this.name,
-      required this.age,
-      required this.value,
-      required this.xp});
+  Player({required this.name, required this.team, required this.xp});
 
-// named parameter
-  Team.redTeam({
-    required String name,
-    required int age,
-    // :부등호를 써줌으로써 default값을 정해줌
-  })  : this.age = age,
-        this.name = name,
-        this.value = "blue",
-        this.xp = 0;
-
-// position parameter
-  Team.blueTeam(String name, int age)
-      : this.age = age,
-        this.name = name,
-        this.value = 'red',
-        this.xp = 0;
+  void sayHello() {
+    print("Hi my name is $name my team $team and experiant $xp");
+  }
 }
 
 void main() {
-  var myTeam = Team(name: "1", age: 12, value: "24", xp: 10);
-  var redTeam = Team.redTeam(name: "hijun", age: 44);
-  var blueTeam = Team.blueTeam("juno", 42);
-  print(myTeam);
-  print(redTeam);
-  print(blueTeam);
+  var player = Player(name: "name", team: "team", xp: 12)
+    // 처음의 .은 player를 의미한다 player끝에 세미클론을 빼줌으로 아직문서가 안끝났고 연결된다는걸 의미한다
+    ..name = 'nico'
+    ..team = 'red'
+    ..xp = 23
+    ..sayHello();
 }
