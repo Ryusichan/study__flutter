@@ -275,7 +275,7 @@
 
 class Player {
   String name;
-  String team;
+  Team team;
   int xp;
 
   Player({required this.name, required this.team, required this.xp});
@@ -286,10 +286,16 @@ class Player {
 }
 
 void main() {
-  var player = Player(name: "name", team: "team", xp: 12)
+  var player = Player(name: "name", team: Team.red, xp: 12)
     // 처음의 .은 player를 의미한다 player끝에 세미클론을 빼줌으로 아직문서가 안끝났고 연결된다는걸 의미한다
     ..name = 'nico'
-    ..team = 'red'
+    ..team = Team.blue
     ..xp = 23
     ..sayHello();
 }
+
+// 17. enum
+// enum은 코드를 짜는동안 실수를 줄여주려 선택의 폭을 위해서 사용한다.
+enum Team { red, blue }
+
+enum XPLevel { beginner, medium, pro }
