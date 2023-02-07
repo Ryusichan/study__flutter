@@ -273,29 +273,76 @@
 
 // 16. Cascade Notation
 
-class Player {
-  String name;
-  Team team;
-  int xp;
+// class Player {
+//   String name;
+//   Team team;
+//   int xp;
 
-  Player({required this.name, required this.team, required this.xp});
+//   Player({required this.name, required this.team, required this.xp});
 
-  void sayHello() {
-    print("Hi my name is $name my team $team and experiant $xp");
-  }
-}
+//   void sayHello() {
+//     print("Hi my name is $name my team $team and experiant $xp");
+//   }
+// }
 
-void main() {
-  var player = Player(name: "name", team: Team.red, xp: 12)
-    // 처음의 .은 player를 의미한다 player끝에 세미클론을 빼줌으로 아직문서가 안끝났고 연결된다는걸 의미한다
-    ..name = 'nico'
-    ..team = Team.blue
-    ..xp = 23
-    ..sayHello();
-}
+// void main() {
+//   var player = Player(name: "name", team: Team.red, xp: 12)
+//     // 처음의 .은 player를 의미한다 player끝에 세미클론을 빼줌으로 아직문서가 안끝났고 연결된다는걸 의미한다
+//     ..name = 'nico'
+//     ..team = Team.blue
+//     ..xp = 23
+//     ..sayHello();
+// }
 
 // 17. enum
 // enum은 코드를 짜는동안 실수를 줄여주려 선택의 폭을 위해서 사용한다.
+// enum Team { red, blue }
+
+// enum XPLevel { beginner, medium, pro }
+
+// 18. abstract Classes
+// 추상화 클래스는 다른 클래스들이 직접 구현 해야하는 메소드들을 모아놓은 일종의 `청사진`이라 보면 된다.
+// 추상 클래스에서는 기능을 구현하지 않는다.
+
+// abstract class Human {
+// void walk();
+// }
+
+// extends를 이용해 상속, 확장을 할 수 있다.
+
+// abstract class Human {
+// void walk();
+// }
+
+// class Player extends Human {
+// // 생략
+// void walk(){
+// print("working!");
+// }
+// }
+
+// 19. inheritance
+
 enum Team { red, blue }
 
-enum XPLevel { beginner, medium, pro }
+class Human {
+  final String name;
+  Human(this.name); //호출 받는다
+  void sayHello() {
+    print("Hello! $name");
+  }
+}
+
+class Player extends Human {
+  final Team team;
+
+  Player({
+    required this.team,
+    required String name,
+    // super를 사용하면 부모 생성자 함수를 호출한다
+  }) : super(name);
+}
+
+void main() {
+  var player = Player(team: Team.blue, name: "wow!!")..sayHello();
+}
