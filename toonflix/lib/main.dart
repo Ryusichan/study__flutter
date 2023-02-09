@@ -1,15 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:toonflix/widget/main_button.dart';
 
-void main() {
-  runApp(MyApp());
-}
+// void main() {
+//   runApp(const MyApp());
+// }
+
+void main() => runApp(const MyApp());
 
 // statelesswidget을 상속받는데 일반적인 레이아웃 클래스이다
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   //Ooverride이하로 상속과 관련된 내용을 표시해준다
   @override
+  State<StatefulWidget> createState() {
+    return _MyAppState();
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  var value = 5800200;
+
+  void addCounter() {
+    setState(() {
+      value + 1;
+    });
+  }
+
   // build를 클래스 안에 넣어주는 약속을 해준다
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       // SCAFFOLD는 화면을 구성하는 설계와 같은 구조물이다
@@ -57,9 +76,9 @@ class MyApp extends StatelessWidget {
                     fontWeight: FontWeight.w300),
               ),
               const SizedBox(height: 4),
-              const Text(
-                '\$5,800,200',
-                style: TextStyle(
+              Text(
+                '\$ $value',
+                style: const TextStyle(
                     fontSize: 36,
                     color: Colors.white,
                     fontWeight: FontWeight.w600),
@@ -107,6 +126,7 @@ class MyApp extends StatelessWidget {
                 height: 20,
               ),
               Container(
+                clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
                   color: const Color(0xFF1f2123),
                   borderRadius: BorderRadius.circular(12),
@@ -117,6 +137,7 @@ class MyApp extends StatelessWidget {
                     horizontal: 24,
                   ),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -154,7 +175,18 @@ class MyApp extends StatelessWidget {
                             ],
                           ),
                         ],
-                      )
+                      ),
+                      Transform.scale(
+                        scale: 2,
+                        child: Transform.translate(
+                          offset: const Offset(6, 10),
+                          child: const Icon(
+                            Icons.euro_symbol_sharp,
+                            size: 68,
+                            color: Color(0xFFFFFFFF),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
