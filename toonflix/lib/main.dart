@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toonflix/widget/main_button.dart';
+import 'package:toonflix/widget/main_card.dart';
 
 // void main() {
 //   runApp(const MyApp());
@@ -125,72 +126,33 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                clipBehavior: Clip.hardEdge,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF1f2123),
-                  borderRadius: BorderRadius.circular(12),
+              const MainCard(
+                title: 'Euro',
+                value: '6 428',
+                currency: 'EUR',
+                isInvert: true,
+                icon: Icons.euro_symbol_sharp,
+              ),
+              Transform.translate(
+                offset: const Offset(0, -22),
+                child: const MainCard(
+                  title: 'Dollar',
+                  value: '55 622',
+                  currency: 'USD',
+                  isInvert: false,
+                  icon: Icons.attach_money_sharp,
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 24,
-                    horizontal: 24,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Euro',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 24),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              const Text(
-                                '6 428',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 20),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                'EUR',
-                                style: TextStyle(
-                                    color: Colors.white.withOpacity(0.7),
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Transform.scale(
-                        scale: 2,
-                        child: Transform.translate(
-                          offset: const Offset(6, 10),
-                          child: const Icon(
-                            Icons.euro_symbol_sharp,
-                            size: 68,
-                            color: Color(0xFFFFFFFF),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+              ),
+              Transform.translate(
+                offset: const Offset(0, -44),
+                child: const MainCard(
+                  title: 'Rupee',
+                  value: '28 981',
+                  currency: 'INR',
+                  isInvert: true,
+                  icon: Icons.currency_rupee_sharp,
                 ),
-              )
+              ),
             ],
           ),
         ),
