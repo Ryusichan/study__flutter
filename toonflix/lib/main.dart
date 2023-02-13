@@ -33,6 +33,16 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          textTheme: const TextTheme(
+              titleLarge: TextStyle(
+                  color: Colors.white,
+                  fontSize: 36,
+                  fontWeight: FontWeight.w600),
+              titleMedium: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w700))),
       // SCAFFOLD는 화면을 구성하는 설계와 같은 구조물이다
       home: Scaffold(
         backgroundColor: const Color(0xFF181818),
@@ -51,14 +61,7 @@ class _MyAppState extends State<MyApp> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        const Text(
-                          'Hey, Selena',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 30,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
+                        const Maintitle(),
                         Text(
                           'welcome back',
                           style: TextStyle(
@@ -161,5 +164,18 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
     );
+  }
+}
+
+// BuildContext의 이해 context를 이용하여 부모요소에 접근할수있다 최상위 부모요소, 상위부모요소 찾는 여러방법이있으니 숙지 필요
+// ex : materai theme 선언한 부모요소 찾기
+class Maintitle extends StatelessWidget {
+  const Maintitle({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Hey, Selena', style: Theme.of(context).textTheme.titleMedium);
   }
 }
