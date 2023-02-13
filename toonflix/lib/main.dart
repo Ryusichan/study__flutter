@@ -20,11 +20,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var value = 5800200;
+  //버튼을 활용하여 state의 값을 바꾸기
+  int value = 5800200;
 
   void addCounter() {
     setState(() {
-      value + 1;
+      value = value + 1;
     });
   }
 
@@ -90,15 +91,19 @@ class _MyAppState extends State<MyApp> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    MainButton(
+                  children: [
+                    const MainButton(
                         text: 'Transfer',
                         color: Colors.amber,
                         textColor: Color.fromARGB(255, 12, 12, 12)),
-                    MainButton(
+                    const MainButton(
                         text: 'Request',
                         color: Color.fromARGB(255, 44, 44, 44),
                         textColor: Color.fromARGB(255, 255, 255, 255)),
+                    //버튼을 활용하여 state의 값을 바꾸기
+                    IconButton(
+                        onPressed: addCounter,
+                        icon: const Icon(Icons.add_a_photo)),
                   ],
                 ),
                 const SizedBox(height: 20),
